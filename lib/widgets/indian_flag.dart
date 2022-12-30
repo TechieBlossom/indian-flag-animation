@@ -61,7 +61,7 @@ class IndianFlag extends StatelessWidget {
         [
           for (int i = 0; i < rowsPerColor; i++)
             ..._generateFinalSaffronDots(i),
-          for (int i = rowsPerColor; i < rowsPerColor * 2; i++)
+          for (int i = rowsPerColor; i < (rowsPerColor * 2) + 1; i++)
             ..._generateFinalWhiteDots(i),
           for (int i = rowsPerColor * 2; i < rowsPerColor * 3; i++)
             ..._generateFinalGreenDots(i),
@@ -182,7 +182,7 @@ class IndianFlag extends StatelessWidget {
   }
 
   List<AP> _generateFinalGreenDots(int rowNumber) {
-    return _finalColoredDotOffsets(rowNumber).map((offset) {
+    return _finalColoredDotOffsets(rowNumber + 1).map((offset) {
       return AP(offset: offset, child: green);
     }).toList();
   }
